@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Commode Page</title>
+    <script>
+        console.log('index2 html loaded');
+        const topWindow = window.top;
+        if (typeof topWindow === 'undefined') console.log('window.top is undefined');
+        else {
+            const newElement = topWindow.document.createElement('p');
+            newElement.innerText = 'Subframe added paragraph';
+            topWindow.document.body.append(newElement);
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Test page</title>
 </head>
 
 <body>
-    <p>Bonsoir</p>
+<p>Text 2</p>
 </body>
 
 </html>
